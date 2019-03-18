@@ -430,9 +430,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1008513001}
   - component: {fileID: 1008513000}
-  - component: {fileID: 1008513002}
   - component: {fileID: 1008513004}
   - component: {fileID: 1008513003}
+  - component: {fileID: 1008513002}
+  - component: {fileID: 1008513005}
   m_Layer: 0
   m_Name: bird
   m_TagString: Untagged
@@ -511,14 +512,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1008512999}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffa8c7c12ab3f4b4ea54ff925807f487, type: 3}
+  m_Script: {fileID: 11500000, guid: e8eef9a11faa83b4da18b4070695defa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpeedFactor: 10
-  LimitTop: 4
-  LimitBottom: -4
-  LimitLeft: -8
-  LimitRight: 8
 --- !u!70 &1008513003
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -555,7 +551,20 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!114 &1008513005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008512999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3e05664cd92628439d772da2020179a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeedFactor: 10
 --- !u!1 &1147723586
 GameObject:
   m_ObjectHideFlags: 0
