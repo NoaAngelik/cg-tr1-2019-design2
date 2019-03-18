@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
+
 
 public class CineManager : MonoBehaviour
 {
@@ -11,6 +13,12 @@ public class CineManager : MonoBehaviour
     [SerializeField]
     
    private Transform Tape = null;
+
+
+void Awake () {
+Assert.IsNotNull(Tape);
+
+}
 
     void Start()
     {
