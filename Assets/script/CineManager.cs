@@ -6,7 +6,10 @@ using UnityEngine.Assertions;
 
 public class CineManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+   
+   public static CineManager instance = null;
+
+
    [SerializeField]
    private Vector3 TapeSpeed = new Vector3(-2f, 0f, 0f);
      
@@ -16,9 +19,13 @@ public class CineManager : MonoBehaviour
 
 
 public UIComponents uIComponents;
+
+SceneData sceneData = new SceneData();
+
 void Awake () {
 Assert.IsNotNull(Tape);
-
+if (instance == null){
+    instance = this;}
 }
 
     void Start()
@@ -30,6 +37,15 @@ Assert.IsNotNull(Tape);
     void Update()
     {
         Tape.position = Tape.position + TapeSpeed * Time.deltaTime;
-        
+        DisplayHudData();
+    }
+
+    public void IncrementCoinCount () {
+        sceneData.coinCount++;
+    }
+
+    void DisplayHudData(){
+
+        uIComponents.hud.txtCoinCount.text = "x " + sceneData.coinCount;
     }
 }
