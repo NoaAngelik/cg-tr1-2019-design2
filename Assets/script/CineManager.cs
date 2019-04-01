@@ -15,6 +15,7 @@ public class CineManager : MonoBehaviour
    private Transform Tape = null;
 
 
+public UIComponents uIComponents;
 void Awake () {
 Assert.IsNotNull(Tape);
 
