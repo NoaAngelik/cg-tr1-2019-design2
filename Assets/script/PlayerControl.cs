@@ -23,6 +23,17 @@ void OnTriggerEnter2D(Collider2D other){
         Destroy(other.gameObject);
         CineManager.instance.IncrementCoinCount();
     }
+else if (other.gameObject.layer == LayerMask.NameToLayer("Enemies")){
+    Camera.main.GetComponentInChildren<AudioSource>().mute = true;
+    CineManager.instance.SetTapeSpeed(0);
+    AudioManager.instance.PlaySoundFail(gameObject);
+Destroy(gameObject);
 }
+
+}
+
+
+
+
 
 }
