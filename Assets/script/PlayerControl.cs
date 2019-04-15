@@ -24,16 +24,23 @@ void OnTriggerEnter2D(Collider2D other){
         CineManager.instance.IncrementCoinCount();
     }
 else if (other.gameObject.layer == LayerMask.NameToLayer("Enemies")){
-    Camera.main.GetComponentInChildren<AudioSource>().mute = true;
+    KillPlayer();
+}
+
+else if (other.gameObject.layer == LayerMask.NameToLayer("forbiden")){
+KillPlayer();
+}
+
+}
+
+
+void KillPlayer(){
+     Camera.main.GetComponentInChildren<AudioSource>().mute = true;
     CineManager.instance.SetTapeSpeed(0);
     AudioManager.instance.PlaySoundFail(gameObject);
-Destroy(gameObject);
+    SFXManager.instance.ShowDieParticles(gameObject);
+    Destroy(gameObject);
 }
-
-}
-
-
-
 
 
 }

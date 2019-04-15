@@ -8,6 +8,7 @@ public class SFXManager : MonoBehaviour
 public static SFXManager instance;
 
 public GameObject coinParticles;
+public GameObject dieParticles;
 
 void Awake() {
 
@@ -23,5 +24,9 @@ public void ShowCoinParticles(GameObject obj) {
     particles.transform.SetParent(parent.transform);
 }
 
-
+public void ShowDieParticles(GameObject obj) {
+    GameObject particles = Instantiate(dieParticles, obj.transform.position, Quaternion.identity);
+    GameObject parent = GameObject.Find("Tape");
+    particles.transform.SetParent(parent.transform);
+}
 }
