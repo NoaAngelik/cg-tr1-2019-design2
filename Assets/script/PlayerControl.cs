@@ -23,6 +23,14 @@ void OnTriggerEnter2D(Collider2D other){
         Destroy(other.gameObject);
         CineManager.instance.IncrementCoinCount();
     }
+    if (other.gameObject.CompareTag("Gift")){
+
+       AudioManager.instance.PlaySoundlevelComplete(gameObject);
+        StopMusicAndTape();
+    
+         Destroy(other.gameObject);
+
+    }
 else if (other.gameObject.layer == LayerMask.NameToLayer("Enemies")){
     KillPlayer();
 }
@@ -34,9 +42,13 @@ KillPlayer();
 }
 
 
-void KillPlayer(){
+void StopMusicAndTape (){
      Camera.main.GetComponentInChildren<AudioSource>().mute = true;
     CineManager.instance.SetTapeSpeed(0);
+}
+
+void KillPlayer(){
+     StopMusicAndTape();
     AudioManager.instance.PlaySoundFail(gameObject);
     SFXManager.instance.ShowDieParticles(gameObject);
     Destroy(gameObject);

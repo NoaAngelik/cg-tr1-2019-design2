@@ -22,4 +22,7 @@ public void PlaySoundFail(GameObject obj){
     AudioSource.PlayClipAtPoint(audioSFX.fail, obj.transform.position);
 }
 
+public void PlaySoundlevelComplete(GameObject obj){
+    AudioSource.PlayClipAtPoint(audioSFX.levelComplete, obj.transform.position);
+}
 }
