@@ -57,6 +57,10 @@ if (instance == null){
      uIComponents.LCPanel.LCPanel.SetActive(true);
      uIComponents.LCPanel.txtScore.text = "" + sceneData.coinCount;
  }
+ public void ShowGameOverPanel() {
+     uIComponents.gameOverPanel.GOPanel.SetActive(true);
+     uIComponents.gameOverPanel.txtScore.text = "" + sceneData.coinCount;
+ }
 
 
 }
