@@ -52,4 +52,11 @@ if (instance == null){
     public void SetTapeSpeed (float value){
         TapeSpeed = new Vector3(value, TapeSpeed.y, TapeSpeed.z);
     }
+
+ public void ShowLevelCompletePanel() {
+     uIComponents.LCPanel.LCPanel.SetActive(true);
+     uIComponents.LCPanel.txtScore.text = "" + sceneData.coinCount;
+ }
+
+
 }

@@ -29,6 +29,8 @@ void OnTriggerEnter2D(Collider2D other){
         StopMusicAndTape();
     
          Destroy(other.gameObject);
+   
+         CineManager.instance.ShowLevelCompletePanel();
 
     }
 else if (other.gameObject.layer == LayerMask.NameToLayer("Enemies")){
