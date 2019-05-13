@@ -32,7 +32,7 @@ void OnTriggerEnter2D(Collider2D other){
        AudioManager.instance.PlaySoundlevelComplete(gameObject);
         StopMusicAndTape();
     
-         Destroy(other.gameObject);
+        DestroyPlayer();
    
          CineManager.instance.ShowLevelCompletePanel();
 
@@ -57,8 +57,7 @@ void KillPlayer(){
      StopMusicAndTape();
     AudioManager.instance.PlaySoundFail(gameObject);
     SFXManager.instance.ShowDieParticles(gameObject);
-    Destroy(gameObject);
-
+    DestroyPlayer();
     CineManager.instance.ShowGameOverPanel();
 }
 
@@ -68,5 +67,9 @@ void Impulse(float force) {
 }
 
 
+void DestroyPlayer(){
+    Camera.main.GetComponent<CameraFollow>().TurnOff();
+    Destroy(gameObject);
+}
 
 }
