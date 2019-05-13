@@ -6,17 +6,23 @@ public class PlayerControl : MonoBehaviour
 {
     
       Rigidbody2D rb;
- 
+
+      Animator anim;
+
+      public float fallLimit = 2f;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(rb.velocity.y < fallLimit){
+         anim.SetInteger("State", 0);
+        }
     }
 
 void OnTriggerEnter2D(Collider2D other){
@@ -64,6 +70,7 @@ void KillPlayer(){
 void Impulse(float force) {
     rb.velocity = Vector3.zero;
     rb.AddForce(Vector3.up * force, ForceMode2D.Impulse);
+    anim.SetInteger("State", 1);
 }
 
 
