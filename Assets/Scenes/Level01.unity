@@ -1636,8 +1636,8 @@ GameObject:
   - component: {fileID: 659508556}
   - component: {fileID: 659508562}
   - component: {fileID: 659508561}
-  - component: {fileID: 659508560}
   - component: {fileID: 659508559}
+  - component: {fileID: 659508560}
   m_Layer: 8
   m_Name: fatbird
   m_TagString: Untagged
@@ -1747,10 +1747,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 659508555}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d3e05664cd92628439d772da2020179a, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a2bd8a252cab774590ce2d84d1147d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpeedFactor: 10
+  lerpRate: 4
 --- !u!70 &659508561
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -2209,7 +2209,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1015874815
 Transform:
   m_ObjectHideFlags: 0
